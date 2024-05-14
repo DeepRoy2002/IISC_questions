@@ -1,4 +1,4 @@
-Note- All the output CSV files that are derived are compressed into the csv_output_compressed.rar file. It has to be unpacked 
+Note- Due to large size of the output csv files all of them, that are derived are compressed into the csv_output_compressed.rar file. It has to be unpacked to access the output csv
 Note- Here 2 csv files are created in which the first one contains TF-IDF vectorizer and the second one contains word embeddings
 Note- Here the same code for both the files has been in written in both jupyter notebook and IDLE environment for the ease of use
 
