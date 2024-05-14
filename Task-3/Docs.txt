@@ -1,7 +1,0 @@
-Note- due to module version mismatch between streamlit and tensorflow, the model was not able to run on local host even after deploying it using a virtual environment. The model works perfectly along with its prediction but due version problem, tensorflow is not being identified by VSCode, so the modelling was done using jupyter notebook. The flask code and streamlit code are also provided 
-
-Usage- the trained model is saved as model_1.h5 and the training code is available inside the file modelling.ipynb. he deployment code using flask and streamlit are given in the files having their names respectively. Model testing can be done by going into the modelling.ipynb file and then going to cell no. 28 and then giving the desirable image index. The class prediction will be given along that.
-
-Limitations- Due to the limited computing power, the performance of more complex models like resnet, densenet,mobilenet, etc, is very time taking and heavy on the systems as well, so we applied our own custom model which,even though the accuracy is a little low i.e. 79%, seems to be working quite well within limited resources 
-
-A screenshot of the simple web application is also attached which was made using streamlit
