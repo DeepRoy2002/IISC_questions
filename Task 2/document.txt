@@ -1,0 +1,58 @@
+
+Note- Here 2 csv files are created in which the first one contains TF-IDF vectorizer and the second one contains word embeddings
+Note- Here the same code for both the files has been in written in both jupyter notebook and IDLE environment for the ease of use
+
+articles.ipynb/.py contains the code for TF-IDF vectorizer and embed.ipynb/.py contains the code for word embeddings
+
+Data Preparation and Preprocessing:
+
+1)Data Extraction: Initially, the code unzips the provided 'data.zip' file, extracting its contents into a folder named 'BBC_articles.'
+
+2)CSV File Creation: It then creates a new CSV file named bbc_articles.csv to structure the data. This CSV file will hold information about each article, including its unique identifier (article_id), full text (text), and corresponding category (category).
+
+3)Reading Text Files: The code iterates through each text file in the BBC_articles folder, extracting the article_id and category from the filename. It reads the content of each text file and writes the extracted information to the CSV file.
+
+4)Text Preprocessing: After loading the data into a DataFrame, the code proceeds with text preprocessing. It tokenizes the text using NLTK's word_tokenize, converts words to lowercase, removes punctuation, stopwords, and performs stemming using PorterStemmer.
+
+5)Feature Extraction - TF-IDF: The preprocessed text is then vectorized using TF-IDF (Term Frequency-Inverse Document Frequency) vectorization. This technique calculates the importance of each word in the document relative to its frequency in the entire corpus.
+
+6)Combining Features: The TF-IDF features are combined with the category labels into a new DataFrame.
+
+7)Storing Numerical Features: Finally, the numerical features along with the category labels are written to a new CSV file named bbc_articles_numerical_features.csv.
+
+
+Dependencies:
+
+The code requires the os, csv, zipfile, numpy, pandas, matplotlib, nltk, sklearn, and string libraries/modules.
+Ensure that NLTK resources (punkt for tokenization and stopwords) are downloaded before running the code.
+Instructions for Running the Code:
+
+Download the provided data.zip file and place it in the same directory as the code.
+Ensure that all necessary dependencies are installed, including NLTK resources.
+Execute the provided code in a Python environment.
+Result:
+The code successfully prepares the dataset by structuring the data into a CSV file, performs preprocessing on the text data, and derives numerical features using TF-IDF vectorization. These features, along with the category labels, are stored in a new CSV file, ready for further analysis or model training.
+
+Vectorization techniques:-
+
+1)Bag of Words (BoW):
+Bag of Words is a simple and widely used technique for feature extraction from text data. Here's how it works:
+Tokenization: First, the text is tokenized, splitting it into individual words or tokens.
+Vocabulary Creation: Then, a fixed-size vocabulary is created, containing unique words from the entire corpus (collection of documents).
+Feature Vectorization: Each document (or text) is represented as a numerical feature vector. The length of the vector is equal to the size of the vocabulary, and each entry corresponds to the count or frequency of a word from the vocabulary in the document.
+Example: For example, consider two documents: "I love machine learning" and "Machine learning is fascinating." The vocabulary might contain words like "I," "love," "machine," "learning," and "fascinating." The BoW representation for the first document could be [1, 1, 1, 1, 0], and for the second document, it could be [0, 0, 1, 1, 1].
+
+2)Term Frequency-Inverse Document Frequency (TF-IDF):
+TF-IDF is a numerical statistic that reflects the importance of a word in a document relative to a collection of documents. It consists of two components:
+Term Frequency (TF): Measures the frequency of a term (word) in a document. It is calculated as the ratio of the count of a word to the total number of words in the document.
+Inverse Document Frequency (IDF): Measures the rarity of a term across the entire corpus. It is calculated as the logarithm of the ratio of the total number of documents to the number of documents containing the term.
+TF-IDF is calculated as the product of TF and IDF. It assigns higher weights to terms that are frequent in a document but rare across the corpus, capturing their discriminative power.
+
+3)Word Embeddings:
+Word embeddings are dense vector representations of words in a continuous vector space. They capture semantic meanings of words based on their context and distributional similarities. Here's how they are generated:
+Training Word Embedding Models: Word embedding models like Word2Vec, GloVe, or FastText are trained on large text corpora. These models learn to predict the context (neighboring words) of a target word based on its occurrence in the corpus.
+Dense Vector Representation: Each word is represented as a dense vector of fixed size (e.g., 100, 200 dimensions), where each dimension captures a different aspect of the word's meaning.
+Semantic Similarity: Similar words have similar vector representations, as they tend to appear in similar contexts. For example, vectors for "king" and "queen" might be close in the vector space.
+Word embeddings capture rich semantic relationships between words and are widely used in various natural language processing tasks such as sentiment analysis, named entity recognition, and machine translation
+
+
